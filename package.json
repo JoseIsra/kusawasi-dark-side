@@ -1,0 +1,25 @@
+{
+  "name": "kusawasi-back",
+  "version": "1.0.0",
+  "description": "college project",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "momo": "cd src && npx sequelize-cli model:generate --name ",
+    "gomigrate": "cd src && npx sequelize-cli db:migrate",
+    "destro": "cd src && npx sequelize-cli db:migrate:undo:all",
+    "destro:one": "cd src && npx sequelize-cli db:migrate:undo",
+    "skeleton": "cd src && npx sequelize-cli migration:generate --name "
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.12.5",
+    "sequelize-cli": "^6.3.0"
+  }
+}
