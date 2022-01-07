@@ -1,14 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 const PORT = process.env.PORT || 3000;
-// const routerApi = require("./routes/index");
+const routerApi = require("./routes/index");
 const app = express();
 
 // server config 😀
 app.use(express.json());
 app.use(cors());
 
-// routerApi(app);
+routerApi(app);
 
 // routes 🤖
 app.use("/", (req, res) => {
