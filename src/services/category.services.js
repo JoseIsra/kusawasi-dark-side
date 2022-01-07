@@ -16,6 +16,30 @@ module.exports = {
       console.log(error);
     }
   },
-  getOne: (req, res) => {},
-  create: (req, res) => {},
+  getOne: async (req, res) => {
+    const { id } = req.params;
+    try {
+      const result = await Category.findByPk(id);
+      console.log(result);
+      if (!result) {
+        res.status(404).json({
+          message: "Category not found",
+        });
+        return;
+      }
+      res.status(200).json({
+        message: "Categoría encontrada",
+        result,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  },
+  create: async (req, res) => {
+    await Category.create(req.body);
+    res.json({
+      message: "Creación exitosa",
+      data: req.body,
+    });
+  },
 };
